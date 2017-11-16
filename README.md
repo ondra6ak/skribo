@@ -27,17 +27,20 @@ Every screenplay must begin with header like the one bellow and blank line after
 	TITLE
 	Subtitle
 	Alice Doe; Bob Doe
+	
 
 Each scene begins with the scene name in allcaps and blank line
 
 	SCENE EXAMPLE
 
+
 Replica begins with the character name and a colon following by the actual text and a blank line
 
 	Alice: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
+
 Notes can appear anywhere in the text
 
 	Alice: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. (exits)
-	
+
 	(The room darkens)
