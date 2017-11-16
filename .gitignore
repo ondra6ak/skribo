@@ -1,0 +1,7 @@
+__pycache__/
+*.pdf
+*.json
+test.md
+test.json
+test.latex
+foo

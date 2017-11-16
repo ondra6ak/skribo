@@ -1,0 +1,36 @@
+#!/usr/bin/python3
+
+import skribo
+import json
+import sys
+import datetime
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-i", metavar="INPUT", default="/dev/stdin", required=False, dest="inf")
+parser.add_argument("-o", metavar="OUTPUT", default="/dev/stdout", required=False, dest="outf")
+args = parser.parse_args()
+
+inf = open(args.inf)
+outf = open(args.outf, "w")
+
+header = ""
+for i in range(3):
+	header += inf.readline()
+
+header = skribo.title_get(header)
+header["date"] = {"c": skribo.str2tok(datetime.datetime.now().isoformat()[:-16]), "t": "MetaInlines"}
+
+blocks = []
+for line in inf.readlines():
+	line = line.strip()
+	if not line in ("\n", ""):
+		try:
+			blocks.append(skribo.tokenize(line))
+		except AttributeError:
+			print("ERR:", line, file=sys.stderr)
+			sys.exit(1)
+
+outf.write(json.dumps({"pandoc-api-version": [1, 17, 0, 4], "meta": header, "blocks": blocks}, ensure_ascii=False))
+
+outf.close()

@@ -1,0 +1,24 @@
+#!/usr/bin/python3
+
+import skribo
+import argparse
+import json
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-i", metavar="INPUT", default="/dev/stdin", required=False, dest="inf")
+parser.add_argument("-o", metavar="OUTPUT", default="/dev/stdout", required=False, dest="outf")
+args = parser.parse_args()
+
+inf = open(args.inf)
+outf = open(args.outf, "w")
+
+ast = json.load(inf)
+
+outf.write(skribo.meta2str(ast["meta"]) + "\n")
+outf.flush()
+
+for line in skribo.blocks2str(ast["blocks"]):
+	outf.write(line + "\n\n")
+	outf.flush()
+
+outf.close()
