@@ -11,7 +11,8 @@ Install `python3` and `pip`, `pandoc`, `texlive-luatex` (recomended) and `texliv
 	# pip3 install unicode-slugify
 	# mkdir -p /usr/lib/python3/dist-packages/skribo
 	# cp skribo.py /usr/lib/python3/dist-packages/skribo/__init__.py
-	# cp skrib-reader skribo-writer /usr/bin/
+	# chmod +x skribo-*
+	# cp skrib-* /usr/bin/
 	# cp -r robot /usr/share/fonts/truetype/roboto
 
 Usage (WIP)
@@ -27,7 +28,7 @@ Every screenplay must begin with header like the one bellow and blank line after
 	TITLE
 	Subtitle
 	Alice Doe; Bob Doe
-	
+
 
 Each scene begins with the scene name in allcaps and blank line
 
