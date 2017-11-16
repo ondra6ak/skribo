@@ -29,7 +29,7 @@ def titelize(s):
 	out = ""
 	for w in s.split(" "):
 		if w.lower() not in CAPS_EXCEPTIONS:
-			out += w.title()
+			out += w[0].upper() + w[1:].lower()
 		else:
 			out += w.lower()
 		out += " "
