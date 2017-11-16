@@ -13,7 +13,7 @@ Install `python3` and `pip`, `pandoc`, `texlive-luatex` (recomended) and `texliv
 	# cp skribo.py /usr/lib/python3/dist-packages/skribo/__init__.py
 	# chmod +x skribo-*
 	# cp skrib-* /usr/bin/
-	# cp -r robot /usr/share/fonts/truetype/roboto
+	# cp -r roboto /usr/share/fonts/truetype/roboto
 
 Usage (WIP)
 -----------
